@@ -3,6 +3,8 @@ import { db } from '@/lib/db';
 import { getCurrentUser } from '@/lib/auth';
 import { slugify } from '@/lib/utils';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(
   req: Request,
   { params }: { params: { id: string } }
