@@ -67,9 +67,9 @@ export default async function HomePage() {
         {/* Background Image with luxury overlay */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=2000&q=85"
+            src="https://i.pinimg.com/736x/a8/99/9b/a8999b013ad9a3f366a29ba0ad1a2b7c.jpg"
             alt="Rivaayat Luxury Pakistani Sarees"
-            className="w-full h-full object-cover object-top opacity-35 scale-105 animate-pulse duration-[10000ms]"
+            className="w-full h-full object-cover object-top opacity-40 scale-105 duration-[10000ms]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#171213] via-[#171213]/60 to-[#171213]/40" />
           <div className="absolute inset-0 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
@@ -197,7 +197,7 @@ export default async function HomePage() {
               <div className="space-y-4">
                 <div className="rounded-lg overflow-hidden shadow-lg border border-gold-500/20 aspect-[3/4]">
                   <img
-                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+                    src="https://i.pinimg.com/736x/9a/85/aa/9a85aab8f04eaec9fd2c3f284d0de00b.jpg"
                     alt="Artisan Saree Weaving"
                     className="w-full h-full object-cover"
                   />
@@ -215,7 +215,7 @@ export default async function HomePage() {
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg border border-gold-500/20 aspect-[3/4]">
                   <img
-                    src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80"
+                    src="https://i.pinimg.com/1200x/77/cf/6f/77cf6fa58613df7ea98aafbc27c5c39b.jpg"
                     alt="Pakistani Saree Drape Details"
                     className="w-full h-full object-cover"
                   />
