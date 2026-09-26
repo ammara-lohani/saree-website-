@@ -53,8 +53,8 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ammara-lohani/saree-website.git
-cd saree-website
+git clone https://github.com/ammara-lohani/saree-website-.git
+cd saree-website-
 ```
 
 ### 2. Install Dependencies
