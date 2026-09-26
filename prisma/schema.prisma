@@ -1,0 +1,98 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String     @id @default(cuid())
+  name      String
+  email     String     @unique
+  password  String
+  role      String     @default("customer") // "customer" | "admin"
+  phone     String?
+  address   String?
+  city      String?
+  orders    Order[]
+  cart      CartItem[]
+  wishlist  WishlistItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  image       String?
+  active      Boolean   @default(true)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  description   String
+  categoryId    String
+  category      Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  price         Float
+  discountPrice Float?
+  colors        String    // JSON array string: '["Maroon", "Gold"]'
+  fabric        String
+  images        String    // JSON array string: '["https://...", "https://..."]'
+  stock         Int       @default(10)
+  sku           String    @unique
+  featured      Boolean   @default(false)
+  newArrival    Boolean   @default(false)
+  active        Boolean   @default(true)
+  careGuide     String?
+  blouseDetails String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Order {
+  id                  String   @id @default(cuid())
+  orderNumber         String   @unique
+  userId              String?
+  user                User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  customerName        String
+  customerEmail       String
+  customerPhone       String
+  shippingAddress     String
+  city                String
+  postalCode          String
+  itemsJson           String   // JSON array of order line items
+  subtotal            Float
+  shippingFee         Float
+  total               Float
+  paymentMethod       String   @default("Cash on Delivery")
+  status              String   @default("Pending") // "Pending", "Confirmed", "Processing", "Shipped", "Delivered", "Cancelled"
+  notes               String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model CartItem {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId     String
+  quantity      Int      @default(1)
+  selectedColor String
+  createdAt     DateTime @default(now())
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  createdAt DateTime @default(now())
+}
