@@ -79,7 +79,7 @@ npm run setup
 npm run dev
 ```
 
-Open [https://saree-website-five.vercel.app/]((https://saree-website-five.vercel.app/)) (or whichever port Next.js binds to) in your browser.
+Open [https://saree-website-five.vercel.app/](https://saree-website-five.vercel.app/) (or whichever port Next.js binds to) in your browser.
 
 ---
 
